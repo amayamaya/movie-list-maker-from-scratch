@@ -1,30 +1,50 @@
 import React from 'react';
 
 export default function MovieForm({
-  movieFormName,
+  movieFormTitle,
+  setMovieFormTitle,
   movieFormDirector,
+  setMovieFormDirector,
   movieFormYear,
-  movieFormColor,
+  setMovieFormYear,
+  movieFormVibe,
+  setMovieFormVibe,
+  submitMovie,
 }) {
+  //   console.log(movieFormTitle);
+
   return (
     <div className="movie-form-container quarter">
-      <form className="movie-form">
+      <form onSubmit={submitMovie} className="movie-form">
         <label>
-          Name:
-          <input required value={movieFormName} />
+          Title:
+          <input
+            required
+            value={movieFormTitle}
+            onChange={(e) => setMovieFormTitle(e.target.value)}
+          />
         </label>
         <label>
           Director:
-          <input required value={movieFormDirector} />
+          <input
+            required
+            value={movieFormDirector}
+            onChange={(e) => setMovieFormDirector(e.target.value)}
+          />
         </label>
         <label>
-          Director:
-          <input required value={movieFormYear} />
+          Year:
+          <input
+            required
+            type="number"
+            value={movieFormYear}
+            onChange={(e) => setMovieFormYear(e.target.value)}
+          />
         </label>
         <label>
           Vibe:
-          <select required value={movieFormColor}>
-            <option value="happy">Happy</option>
+          <select required value={movieFormVibe} onChange={(e) => setMovieFormVibe(e.target.value)}>
+            <option value="joyous">Joyous</option>
             <option value="mellow">Mellow</option>
             <option value="optimistic">Optimistic</option>
             <option value="nerdy">Nerdy</option>
