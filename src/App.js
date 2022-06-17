@@ -5,16 +5,18 @@ import MovieList from './MovieList';
 import Movie from './Movie';
 
 function App() {
-  const [movieFormTitle, setMovieFormTitle] = useState('');
-  const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieFormYear, setMovieFormYear] = useState('');
-  const [movieFormVibe, setMovieFormVibe] = useState('');
+  const [movieFormTitle, setMovieFormTitle] = useState('AMAYA');
+  const [movieFormDirector, setMovieFormDirector] = useState('amaya');
+  const [movieFormYear, setMovieFormYear] = useState(1989);
+  const [movieFormVibe, setMovieFormVibe] = useState('joyous');
   const [filterString, setFilterString] = useState('');
   const [visibleMovies, setVisibleMovies] = useState([]);
   //dummy data below//
   const [allMovies, setAllMovies] = useState([
     { title: 'Eagle vs. Shark', director: 'Taika Waititi', year: '2007', vibe: 'nerdy' },
   ]);
+
+  console.log(filterString);
 
   useEffect(() => {
     setVisibleMovies(allMovies);
@@ -23,6 +25,7 @@ function App() {
 
   function submitMovie(e) {
     e.preventDefault();
+    console.log(movieFormVibe);
     const newMovie = {
       title: movieFormTitle,
       director: movieFormDirector,
@@ -39,6 +42,7 @@ function App() {
   }
 
   function handleFilterMovies(filterString) {
+    setFilterString(filterString);
     const updateMovies = allMovies.filter((movie) =>
       movie.title.toLocaleLowerCase().includes(filterString.toLocaleLowerCase())
     );
@@ -59,7 +63,8 @@ function App() {
       </div>
       <div className="movie-filter quarter">
         filter:
-        <input required value={filterString} onChange={(e) => handleFilterMovies(e.target.value)} />
+        <input value={filterString} onChange={(e) => handleFilterMovies(e.target.value)} />
+        {console.log(visibleMovies, 'hello')}
       </div>
       <MovieForm
         submitMovie={submitMovie}
@@ -72,10 +77,7 @@ function App() {
         movieFormVibe={movieFormVibe}
         setMovieFormVibe={setMovieFormVibe}
       />
-      <MovieList
-        movies={visibleMovies.length ? visibleMovies : allMovies}
-        handleDeleteMovie={handleDeleteMovie}
-      />
+      <MovieList movies={visibleMovies} handleDeleteMovie={handleDeleteMovie} />
     </div>
   );
 }
