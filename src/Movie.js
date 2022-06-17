@@ -5,8 +5,8 @@ export default function Movie({ handleDeleteMovie, movie }) {
     <div className="movie" onClick={(movie) => handleDeleteMovie && handleDeleteMovie(movie.title)}>
       <h3>{movie.title}</h3>
       <h4>{movie.director}</h4>
-      <p>🍿</p>
-      <p>{movie.year}</p>
+      <h1>🍿</h1>
+      <h4>{movie.year}</h4>
     </div>
   );
 }
