@@ -15,7 +15,7 @@ export default function MovieForm({
 
   return (
     <div className="movie-form-container quarter">
-      <form onSubmit={submitMovie} className="movie-form">
+      <form onSubmit={(e) => submitMovie(e)} className="movie-form">
         <label>
           Title:
           <input
