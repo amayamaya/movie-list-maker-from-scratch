@@ -17,7 +17,6 @@ export default function MovieForm({
     <div className="movie-form-container quarter">
       <form onSubmit={(e) => submitMovie(e)} className="movie-form">
         <label>
-          Title:
           <input
             required
             value={movieFormTitle}
@@ -25,7 +24,6 @@ export default function MovieForm({
           />
         </label>
         <label>
-          Director:
           <input
             required
             value={movieFormDirector}
@@ -33,7 +31,6 @@ export default function MovieForm({
           />
         </label>
         <label>
-          Year:
           <input
             required
             type="number"
@@ -42,13 +39,13 @@ export default function MovieForm({
           />
         </label>
         <label>
-          Vibe:
+          Declare the Vibe :
           <select required value={movieFormVibe} onChange={(e) => setMovieFormVibe(e.target.value)}>
             <option value="joyous">Joyous</option>
             <option value="mellow">Mellow</option>
             <option value="optimistic">Optimistic</option>
             <option value="nerdy">Nerdy</option>
-            <option value="excited">Excited</option>
+            <option value="exciting">Exciting</option>
           </select>
         </label>
         <button>Add Movie to Watch List</button>

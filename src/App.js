@@ -5,9 +5,9 @@ import MovieList from './MovieList';
 import Movie from './Movie';
 
 function App() {
-  const [movieFormTitle, setMovieFormTitle] = useState('AMAYA');
-  const [movieFormDirector, setMovieFormDirector] = useState('amaya');
-  const [movieFormYear, setMovieFormYear] = useState(1989);
+  const [movieFormTitle, setMovieFormTitle] = useState('✨ T i t l e ✨');
+  const [movieFormDirector, setMovieFormDirector] = useState('🎬 D i r e c t o r 🎬');
+  const [movieFormYear, setMovieFormYear] = useState(2022);
   const [movieFormVibe, setMovieFormVibe] = useState('joyous');
   const [filterString, setFilterString] = useState('');
   const [visibleMovies, setVisibleMovies] = useState([]);
@@ -16,8 +16,6 @@ function App() {
     { title: 'Eagle vs. Shark', director: 'Taika Waititi', year: '2007', vibe: 'nerdy' },
   ]);
 
-  console.log(filterString);
-
   useEffect(() => {
     setVisibleMovies(allMovies);
     setFilterString('');
@@ -25,7 +23,6 @@ function App() {
 
   function submitMovie(e) {
     e.preventDefault();
-    console.log(movieFormVibe);
     const newMovie = {
       title: movieFormTitle,
       director: movieFormDirector,
@@ -64,7 +61,6 @@ function App() {
       <div className="movie-filter quarter">
         filter:
         <input value={filterString} onChange={(e) => handleFilterMovies(e.target.value)} />
-        {console.log(visibleMovies, 'hello')}
       </div>
       <MovieForm
         submitMovie={submitMovie}

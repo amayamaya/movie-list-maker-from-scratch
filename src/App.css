@@ -26,16 +26,112 @@ html,
   justify-content: center;
   align-items: center;
   margin: 1em;
-  text-align: justify;
+  text-align: center;
+}
+
+* {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.font-link {
+  font-family: 'Fascinate', cursive;
 }
 
 .joyous {
-  background-color: magenta;
+  width: 13em;
+  height: 13em;
+  padding: 1em;
+  background-image: linear-gradient(
+    to bottom right,
+    red,
+    orange,
+    rgb(178, 178, 3),
+    green,
+    rgb(92, 92, 201),
+    rgb(149, 0, 255),
+    rgb(255, 0, 255)
+  );
+  border-radius: 1em;
+  color: white;
+}
+
+.mellow {
+  width: 13em;
+  height: 13em;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(7, 200, 249),
+    rgb(8, 178, 245),
+    rgb(9, 155, 241),
+    rgb(10, 133, 237),
+    rgb(11, 110, 233),
+    rgb(12, 88, 229),
+    rgb(13, 65, 225)
+  );
+  border-radius: 1em;
+  color: white;
+}
+
+.optimistic {
+  width: 13em;
+  height: 13em;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(194, 0, 251),
+    rgb(169, 83, 222),
+    rgb(236, 8, 152),
+    rgb(252, 0, 92),
+    rgb(244, 75, 8),
+    rgb(236, 125, 16),
+    rgb(255, 188, 10)
+  );
+  border-radius: 1em;
+  color: white;
 }
 
 .nerdy {
-  background-color: cyan;
+  width: 13em;
+  height: 13em;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(17, 87, 64),
+    rgb(0, 126, 86),
+    rgb(33, 169, 126),
+    rgb(66, 197, 151),
+    rgb(33, 169, 126),
+    rgb(0, 126, 86),
+    rgb(17, 87, 64)
+  );
+  border-radius: 1em;
+  color: white;
 }
+
+.exciting {
+  width: 13em;
+  height: 13em;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(230, 35, 20),
+    rgb(232, 55, 21),
+    rgb(254, 98, 63),
+    rgb(255, 120, 90),
+    rgb(254, 98, 63),
+    rgb(232, 55, 21),
+    rgb(230, 35, 20)
+  );
+  border-radius: 1em;
+  color: white;
+}
+
+form label {
+  display: block;
+  margin: .75em;
+}
+
+form input {
+  margin: 0.25em;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
