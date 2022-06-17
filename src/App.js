@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import MovieForm from './MovieForm';
+import MovieList from './MovieList';
+import Movie from './Movie';
 
 function App() {
   const [movieFormTitle, setMovieFormTitle] = useState('');
@@ -25,6 +27,12 @@ function App() {
     setAllMovies([...allMovies, newMovie]);
   }
 
+  function handleDeleteMovie(title) {
+    const indexDelete = allMovies.findIndex((movie) => movie.title === title);
+    allMovies.splice(indexDelete, 1);
+    setAllMovies([...allMovies]);
+  }
+
   return (
     <div className="App">
       <div className="current-movie quarter">
@@ -45,6 +53,7 @@ function App() {
         movieFormVibe={movieFormVibe}
         setMovieFormVibe={setMovieFormVibe}
       />
+      <MovieList movies={allMovies} handleDeleteMovie={handleDeleteMovie} />
     </div>
   );
 }

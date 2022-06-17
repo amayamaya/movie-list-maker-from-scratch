@@ -5,7 +5,7 @@ export default function MovieList({ movies, handleDeleteMovie }) {
   return (
     <div className="movie-list quarter">
       {movies.map((movie, i) => (
-        <Movie key={movie + i} movie={movie} handleDeleteMovie />
+        <Movie key={movie + i} movie={movie} handleDeleteMovie={handleDeleteMovie} />
       ))}
     </div>
   );
